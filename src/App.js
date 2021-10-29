@@ -1,21 +1,22 @@
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonApp, IonRouterOutlet } from '@ionic/react';
 
 import { IonReactRouter } from '@ionic/react-router';
-import { Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import Context from './Context';
+import Tabs from "./pages/Tabs";
 
-import PeriodicTable from './pages/Index.js';
+
+
 
 const App = () => {
   return (
     <Context>
       <IonApp>
         <IonReactRouter>
-          <IonSplitPane contentId="main">
             <IonRouterOutlet id="main">
-              <Route exact path="/" render={PeriodicTable} />
+                <Route path="/tabs" render={() => <Tabs />} />
+                <Route exact path="/" render={() => <Redirect to="/tabs" />} />
             </IonRouterOutlet>
-          </IonSplitPane>
         </IonReactRouter>
       </IonApp>
     </Context>

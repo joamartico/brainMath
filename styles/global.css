@@ -1,3 +1,30 @@
+ion-content{
+  --background: #f2f2f6;
+}
+
+ion-toolbar{
+  background: #f2f2f6 !important;
+  --background: #f2f2f6 !important;
+  --border-color: #0000;
+}
+
+html {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+ion-list {
+  /* height: 100%; */
+  width: 100vw;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 100px) !important;
+}
+
+
+
 a,
 a:hover,
 a:focus,
@@ -5,38 +32,20 @@ a:active,
 *,
 :root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  /* --clear-button-color: #ff0000 !important; */
 }
 
 ion-searchbar .searchbar-clear-button.sc-ion-searchbar-ios {
   background-color: #ededed;
-  margin-right: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 10px;
 }
 
-ion-select-option {
-  --background: red !important;
-  background: red !important;
-  width: 10px !important;
-}
-
-ion-select-option .select-icon {
-  --background: red !important;
-  background: red !important;
-  width: 10px !important;
-}
-
-.select-icon-inner {
-  --background: red !important;
-  background: red !important;
-}
-ion-select-option .select-icon-inner {
-  --background: red !important;
-  background: red !important;
-}
 
 ion-toolbar {
   height: 50px;
 }
+
 
 .ion-select,
 .ion-item,
@@ -52,12 +61,47 @@ ion-toolbar {
   --safe-area-left: env(safe-area-inset-left, 0);
   --safe-area-right: env(safe-area-inset-right, 0);
 }
-body {
-  overflow: hidden;
-  height: 100%;
-  display: flex;
-  width: 100%;
+
+
+
+
+ion-tab-bar {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  --background: #fff0 !important; /*APLICA A LA BARRA DE ARRIBA CON ITEMS*/
+  background: #fff9 !important;/*APLICA A TODA LA BARRA */
+  backdrop-filter: blur(15px);
+  border-top: solid 1px #bab9bacc;
+  z-index: 999999999999;
 }
+
+ion-icon {
+  cursor: pointer;
+}
+
+.ios ion-icon {
+	font-size: 24px ;
+}
+.ios ion-searchbar {
+	--cancel-button-color: #3880ff !important;
+	--background: #e4e3eabb  !important;
+}
+.ios ion-searchbar ion-icon {
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+}
+
+.ios ion-searchbar input {
+	padding-left: 32px !important ;
+}
+
+
+
+
+
 
 /* #__next {
   height: 100vh;
