@@ -1,18 +1,27 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import { isPlatform } from '@ionic/react';
 
-export const Context = createContext();
+const Context = createContext();
 
 const ContextComponent = props => {
+  const [state, setState] = useState()
  
 
   return (
     <Context.Provider
-     
+    value={{
+      ...props.value,
+      state,
+      setState,
+    }}
     >
       {props.children}
     </Context.Provider>
   );
 };
 
+export function useGlobalState(){
+  const globalState = useContext(Context);
+  return globalState;
+}
 export default ContextComponent;

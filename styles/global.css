@@ -1,11 +1,22 @@
-ion-content{
-  --background: #f2f2f6;
+ion-item {
+  height: 100%;
+  margin: auto;
+  --background: var(--item-background-color) !important;
+  background-color: var(--item-background-color) !important;
 }
 
-ion-toolbar{
-  background: #f2f2f6 !important;
-  --background: #f2f2f6 !important;
-  --border-color: #0000;
+ion-spinner {
+  display: flex !important;
+  margin: auto !important;
+}
+
+html,
+body,
+#__next,
+ion-page,
+ion-content {
+  background: var(--background-color) !important;
+  --background: var(--background-color) !important;
 }
 
 html {
@@ -14,15 +25,19 @@ html {
   left: 0;
   right: 0;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
+  font-family: sans-serif !important;
 }
 
 ion-list {
-  /* height: 100%; */
-  width: 100vw;
-  padding-bottom: calc(env(safe-area-inset-bottom) + 100px) !important;
+  width: 100%;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 50px) !important;
+  background: none !important;
+  --background: none !important;
+  max-width: 700px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
-
 
 
 a,
@@ -41,11 +56,23 @@ ion-searchbar .searchbar-clear-button.sc-ion-searchbar-ios {
   border-radius: 10px;
 }
 
-
 ion-toolbar {
-  height: 50px;
+  --padding-bottom: 0 !important;
+  background: none !important;
+  /* --background: #fff !important;
+  background: #fff !important; */
 }
 
+/* ion-toolbar {
+} */
+
+ion-button,
+ion-input,
+ion-textarea,
+ion-text-area {
+  width: 100% !important;
+  margin-top: 15px;
+}
 
 .ion-select,
 .ion-item,
@@ -62,9 +89,6 @@ ion-toolbar {
   --safe-area-right: env(safe-area-inset-right, 0);
 }
 
-
-
-
 ion-tab-bar {
   position: fixed !important;
   bottom: 0;
@@ -72,8 +96,9 @@ ion-tab-bar {
   right: 0;
   width: 100vw;
   --background: #fff0 !important; /*APLICA A LA BARRA DE ARRIBA CON ITEMS*/
-  background: #fff9 !important;/*APLICA A TODA LA BARRA */
+  background: #fff9 !important; /*APLICA A TODA LA BARRA */
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px) !important;
   border-top: solid 1px #bab9bacc;
   z-index: 999999999999;
 }
@@ -83,25 +108,20 @@ ion-icon {
 }
 
 .ios ion-icon {
-	font-size: 24px ;
+  font-size: 24px;
 }
 .ios ion-searchbar {
-	--cancel-button-color: #3880ff !important;
-	--background: #e4e3eabb  !important;
+  --cancel-button-color: #3880ff !important;
+  --background: #e4e3eabb !important;
 }
 .ios ion-searchbar ion-icon {
-	padding-left: 0 !important;
-	margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 .ios ion-searchbar input {
-	padding-left: 32px !important ;
+  padding-left: 32px !important ;
 }
-
-
-
-
-
 
 /* #__next {
   height: 100vh;
