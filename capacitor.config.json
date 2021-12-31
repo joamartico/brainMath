@@ -1,6 +1,6 @@
 {
   "appId": "com.example.app",
-  "appName": "periodictable",
+  "appName": "BrainMath",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "out",

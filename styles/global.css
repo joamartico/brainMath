@@ -1,3 +1,45 @@
+ion-header {
+  background: var(--background-color, #f2f2f6) !important;
+}
+
+ion-content > ion-header > ion-toolbar {
+  --background: var(--background-color, #f2f2f6) !important;
+  --border-width: 0 !important;
+}
+
+html,
+body,
+#__next,
+ion-app,
+ion-content,
+ion-page {
+  background: var(--background-color);
+  --background: var(--background-color);
+  color: var(--ion-text-color);
+}
+
+@media (max-width: 799px) {
+  .Sidebar {
+    display: none !important;
+  }
+  ion-content {
+    background: var(--background-color, #f2f2f6);
+  }
+}
+
+@media (min-width: 800px) {
+  ion-tab-bar {
+    display: none;
+  }
+  ion-toolbar,
+  ion-header {
+    display: none;
+  }
+  ion-content {
+    background: #fff;
+  }
+}
+
 ion-item {
   height: 100%;
   margin: auto;
@@ -8,15 +50,6 @@ ion-item {
 ion-spinner {
   display: flex !important;
   margin: auto !important;
-}
-
-html,
-body,
-#__next,
-ion-page,
-ion-content {
-  background: var(--background-color) !important;
-  --background: var(--background-color) !important;
 }
 
 html {
@@ -31,14 +64,13 @@ html {
 
 ion-list {
   width: 100%;
-  padding-bottom: calc(env(safe-area-inset-bottom) + 50px) !important;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 60px) !important;
   background: none !important;
   --background: none !important;
   max-width: 700px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
-
 
 a,
 a:hover,
@@ -50,10 +82,15 @@ a:active,
 }
 
 ion-searchbar .searchbar-clear-button.sc-ion-searchbar-ios {
-  background-color: #ededed;
+  background-color: #e4e3e9 !important;
+  --background: #e4e3e9 !important;
   padding-right: 30px;
   padding-left: 30px;
   border-radius: 10px;
+}
+
+ion-searchbar {
+  /* --background: #e4e3e9 !important; */
 }
 
 ion-toolbar {
@@ -63,15 +100,11 @@ ion-toolbar {
   background: #fff !important; */
 }
 
-/* ion-toolbar {
-} */
-
-ion-button,
+ion-text-area,
 ion-input,
-ion-textarea,
-ion-text-area {
-  width: 100% !important;
-  margin-top: 15px;
+ion-button {
+  width: 100%;
+  /* margin-top: 15px; */
 }
 
 .ion-select,
@@ -96,10 +129,12 @@ ion-tab-bar {
   right: 0;
   width: 100vw;
   --background: #fff0 !important; /*APLICA A LA BARRA DE ARRIBA CON ITEMS*/
-  background: #fff9 !important; /*APLICA A TODA LA BARRA */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px) !important;
-  border-top: solid 1px #bab9bacc;
+  background: #ffffff10 !important; /*APLICA A TODA LA BARRA */
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px) !important;
+  /* border-top: solid 1px #bab9bacc; */
+  border-top: solid 1px #90909050;
+
   z-index: 999999999999;
 }
 
@@ -107,12 +142,12 @@ ion-icon {
   cursor: pointer;
 }
 
-.ios ion-icon {
+ion-tab-bar .ios ion-icon {
   font-size: 24px;
 }
 .ios ion-searchbar {
   --cancel-button-color: #3880ff !important;
-  --background: #e4e3eabb !important;
+  /* --background: #e4e3eabb !important; */
 }
 .ios ion-searchbar ion-icon {
   padding-left: 0 !important;

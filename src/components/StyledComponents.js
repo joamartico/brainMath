@@ -1,18 +1,7 @@
-import { IonIcon } from '@ionic/react';
+import { IonIcon, IonList } from '@ionic/react';
 import styled from 'styled-components';
 import { COLORS } from '../../styles/theme';
 
-// const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-export const Card = styled.div`
-  width: 100%;
-  /* max-width: 700px; */
-  margin-top: 30px;
-  background-color: #fff;
-  border-radius: 14px;
-  box-shadow: ${({ xOffset }) => xOffset || '0px'} ${({ yOffset }) => yOffset || '50px'} 100px 50px
-    rgba(209, 224, 255, 0.5);
-`;
 
 export const Button = styled.div`
   margin-top: 5px;
@@ -20,7 +9,7 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 46px;
+  height: 56px;
   border-radius: 14px;
   border: 1px solid ${({ red, background }) => (red ? 'red' : background || COLORS.primary)};
   cursor: pointer;
@@ -40,20 +29,27 @@ export const Button = styled.div`
   }
   font-size: 20px;
   font-weight: bold;
-  color: ${({ outlined, red }) => {
-    if (outlined) {
-      if (red) return 'red';
-      else return COLORS.primary;
+  color: ${({ outlined, red, color }) => {
+    if (color) {
+      return color;
     } else {
-      return 'white';
+      if (outlined) {
+        if (red) {
+          return 'red';
+        } else {
+          return COLORS.primary;
+        }
+      } else {
+        return 'white';
+      }
     }
   }};
 `;
 
 export const Padding = styled.div`
   width: 90%;
-  height: 100%;
-  /* height: fit-content; */
+  height: 90%;
+  height: fit-content;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -67,24 +63,40 @@ export const Row = styled.div`
   flex-direction: row;
   width: ${({ width }) => width || '100%'};
   align-items: center;
-  align-items: flex-start;
   justify-content: ${({ spaced }) => spaced && 'space-between'};
+  margin: 0 auto;
+  margin-bottom: ${({ mb }) => mb && mb} !important;
+  margin-top: ${({ mt }) => mt && mt} !important;
+  display: ${({ columns }) => columns && 'grid'};
+  grid-template-columns: ${({ columns }) => columns && columns};
+  color: ${({ color }) => color && color};
+  max-width: 700px;
+  margin: 0 auto;
+  height: ${({ h }) => h}px;
+
 `;
 
 export const Icon = styled(IonIcon)`
   /* --ionicon-stroke-width: 64px !important; */
   /* color: ${({ color }) => (color ? color : COLORS.primary)}; */
-  color: ${({ iconColor }) => (iconColor ? iconColor : COLORS.primary)};
-  font-size: ${({ size }) => size + 'px'};
+  color: ${({ iconColor }) => (iconColor && iconColor)};
+  font-size: ${({ size }) => size + 'px'} !important;
   margin-right: ${({ marginRight }) => marginRight + 'px' || '5px'};
   margin-left: ${({ marginLeft }) => marginLeft + 'px' || '5px'};
   align-self: center;
+  --ionicon-stroke-width: ${({ weight }) => (weight ? weight + 'px' : '30px')} !important;
 `;
 
 export const Text = styled.p`
   display: block;
   /* margin: auto 0; */
-  color: ${({ color }) => color || '#000'} !important;
+  color: ${({ color }) => color || 'var(--ion-text-color)'} !important;
   font-size: ${({ size }) => size + 'px'};
   font-weight: ${({ weight }) => weight && weight};
+  margin-left: ${({ ml }) => ml && ml};
+`;
+
+export const Scroll = styled(IonList)`
+  width: 92%;
+  padding: 4%;
 `;

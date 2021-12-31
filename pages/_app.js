@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         {/* SEO  */}
-        <title>Boilerplate</title>
+        <title>BrainMath</title>
         <meta
           name="google-site-verification"
           // content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
@@ -35,11 +35,11 @@ function MyApp({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#f2f1f6"></meta>
+        <meta name="theme-color" content="#433bb4"></meta>
 
         {/* ICONS */}
-        <link rel="icon" href="/favicon-196.png" />
-        <link rel="apple-touch-icon" href="/apple-icon-180.png"  />
+        <link rel="icon" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/apple-icon-180.png" />
         <link
           rel="apple-touch-startup-image"
           href="/apple-splash-2048-2732.jpg"
@@ -170,8 +170,8 @@ function MyApp({ Component, pageProps }) {
           href="/apple-splash-1136-640.jpg"
           media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
         />
-
       </Head>
+
       <Component {...pageProps} />
     </>
   );

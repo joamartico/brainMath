@@ -1,6 +1,7 @@
 {
+<<<<<<< HEAD
   "appId": "com.example.app",
-  "appName": "periodictable",
+  "appName": "BrainMath",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "out",
@@ -10,4 +11,17 @@
     }
   },
   "cordova": {}
+=======
+	"appId": "com.example.app",
+	"appName": "nextjs-tailwind-capacitor",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "out",
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0
+		}
+	},
+	"cordova": {}
+>>>>>>> edcab7ba04f483b162d5873b7cc42d744e7e6f31
 }
