@@ -1,9 +1,9 @@
-ion-header {
-  background: var(--background-color, #f2f2f6) !important;
+ion-content > ion-header {
+  background: none !important;
 }
 
 ion-content > ion-header > ion-toolbar {
-  --background: var(--background-color, #f2f2f6) !important;
+  --background: none !important;
   --border-width: 0 !important;
 }
 
@@ -13,8 +13,8 @@ body,
 ion-app,
 ion-content,
 ion-page {
-  background: var(--background-color);
-  --background: var(--background-color);
+  background: var(--background-color) !important;
+  --background: var(--background-color) ;
   color: var(--ion-text-color);
 }
 
@@ -96,8 +96,6 @@ ion-searchbar {
 ion-toolbar {
   --padding-bottom: 0 !important;
   background: none !important;
-  /* --background: #fff !important;
-  background: #fff !important; */
 }
 
 ion-text-area,
@@ -343,4 +341,10 @@ ion-tab-bar .ios ion-icon {
   -webkit-box-shadow: 0px 0px 5px 5px #0099e0;
   -moz-box-shadow: 0px 0px 5px 5px #0099e0;
   box-shadow: 0px 0px 5px 5px #0099e0;
+}
+
+ion-content > ion-toolbar {
+  --background: none !important;
+  padding-left: 10px;
+  padding-right: 10px;
 }

@@ -7,13 +7,19 @@ import {
   IonSearchbar,
   IonInput,
   IonTextarea,
+  IonButtons,
+  IonButton,
+  IonToggle,
 } from '@ionic/react';
 
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { COLORS } from '../../styles/theme';
 import { Icon, Padding, Row, Scroll } from '../components/StyledComponents';
-import { bookmark, checkmarkSharp, closeSharp, home, person, search } from 'ionicons/icons';
+import { checkmarkSharp, volumeLow } from 'ionicons/icons';
+import ToggleEyeSound from '../components/ToggleEyeSound';
+import { useGlobalState } from '../Context';
+import ListenButton from "../components/ListenButton";
 
 const operators = ['+', '-', '*', '/'];
 
@@ -21,6 +27,7 @@ const Main = () => {
   const [operation, setOperation] = useState('');
   const [answerInput, setAnswerInput] = useState('');
   const [answerState, setAnswerState] = useState();
+  const { listen } = useGlobalState();
 
   function getRandom(min, max) {
     const rand = min + Math.round(Math.random() * (max - min));
@@ -68,7 +75,13 @@ const Main = () => {
   return (
     <IonPage>
       <IonContent className="scroll" fullscreen>
-        <Text>{operation}</Text>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <ToggleEyeSound />
+          </IonButtons>
+        </IonToolbar>
+
+        <Text>{listen ? <ListenButton operation={operation} /> : operation}</Text>
         <AnswerRow onSubmit={onCheck}>
           <AnswerInput
             onIonChange={e => setAnswerInput(e.detail.value)}

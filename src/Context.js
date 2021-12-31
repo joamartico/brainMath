@@ -4,15 +4,15 @@ import { isPlatform } from '@ionic/react';
 const Context = createContext();
 
 const ContextComponent = props => {
-  const [state, setState] = useState()
+const [listen, setListen] = useState(false)
  
 
   return (
     <Context.Provider
     value={{
       ...props.value,
-      state,
-      setState,
+      listen,
+      setListen,
     }}
     >
       {props.children}
