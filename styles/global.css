@@ -31,10 +31,10 @@ ion-page {
   ion-tab-bar {
     display: none;
   }
-  ion-toolbar,
+  /* ion-toolbar,
   ion-header {
     display: none;
-  }
+  } */
   ion-content {
     background: #fff;
   }
