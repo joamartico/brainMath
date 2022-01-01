@@ -9,7 +9,7 @@ const ToggleEyeSound = () => {
   return (
     <Buttons slot="start">
       <Icon icon={eyeSharp} iconColor="white" />
-      <IonToggle color="medium" onIonChange={e =>setListen(e.detail.checked)}/>
+      <IonToggle color="light" onIonChange={e =>setListen(e.detail.checked)}/>
       <Icon icon={volumeLow} iconColor="white" />
     </Buttons>
   );

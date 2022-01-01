@@ -100,3 +100,12 @@ export const Scroll = styled(IonList)`
   width: 92%;
   padding: 4%;
 `;
+
+
+export const Img = styled.img`
+  width: ${({size}) => size || "75px"};
+  height: ${({size}) => size || "75px"};
+  object-fit: cover;
+  display: flex;
+  /* margin-right: 10px; */
+`;

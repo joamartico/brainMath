@@ -5,6 +5,7 @@ const Context = createContext();
 
 const ContextComponent = props => {
 const [listen, setListen] = useState(false)
+const [lang, setLang] = useState("es-MX")
  
 
   return (
@@ -13,6 +14,8 @@ const [listen, setListen] = useState(false)
       ...props.value,
       listen,
       setListen,
+      lang,
+      setLang
     }}
     >
       {props.children}

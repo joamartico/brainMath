@@ -15,11 +15,12 @@ import {
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { COLORS } from '../../styles/theme';
-import { Icon, Padding, Row, Scroll } from '../components/StyledComponents';
+import { Icon, Img, Padding, Row, Scroll } from '../components/StyledComponents';
 import { checkmarkSharp, volumeLow } from 'ionicons/icons';
 import ToggleEyeSound from '../components/ToggleEyeSound';
 import { useGlobalState } from '../Context';
-import ListenButton from "../components/ListenButton";
+import ListenButton from '../components/ListenButton';
+import LangSelector from '../components/LangSelector';
 
 const operators = ['+', '-', '*', '/'];
 
@@ -75,15 +76,19 @@ const Main = () => {
   return (
     <IonPage>
       <IonContent className="scroll" fullscreen>
-        <IonToolbar>
+        <Toolbar>
           <IonButtons slot="start">
             <ToggleEyeSound />
           </IonButtons>
-        </IonToolbar>
-
+          <Section slot="end">
+            <LangSelector />
+          </Section>
+        </Toolbar>
         <Text>{listen ? <ListenButton operation={operation} /> : operation}</Text>
+
         <AnswerRow onSubmit={onCheck}>
           <AnswerInput
+            autofocus
             onIonChange={e => setAnswerInput(e.detail.value)}
             answerState={answerState}
             value={answerInput}
@@ -103,6 +108,24 @@ const Main = () => {
 };
 
 export default Main;
+
+const Section = styled(IonButtons)`
+  margin-left: auto;
+`;
+
+const Toolbar = styled.div`
+  display: flex !important;
+  align-items: center !important;
+  height: 42px !important;
+  /* font-weight: 500;
+  font-family: Roboto, sans-serif;
+  font-size: 14px; */
+  /* position: fixed !important; */
+  top: 0 !important;
+  width: 90% !important;
+  margin: auto;
+  height: 70px !important;
+`;
 
 const AnswerRow = styled.form`
   display: flex;
