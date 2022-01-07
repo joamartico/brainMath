@@ -92,7 +92,8 @@ const Main = () => {
             onIonChange={e => setAnswerInput(e.detail.value)}
             answerState={answerState}
             value={answerInput}
-            type="number"
+            // type="number"
+            inputmode="numeric"
           />
           <AnswerButton onClick={onCheck} answerState={answerState}>
             {/* Check */}
@@ -139,7 +140,9 @@ const AnswerRow = styled.form`
   width: 200px;
   margin-top: 50px;
   background: red;
-  border:  2.3px solid  ${({ answerState }) => answerState == 'incorrect' ?  COLORS.lightRed : "var(--background-color)"} !important;
+  border: 2.3px solid
+    ${({ answerState }) =>
+      answerState == 'incorrect' ? COLORS.lightRed : 'var(--background-color)'} !important;
   background: ${({ answerState }) => {
     if (answerState == 'correct') return '#2f2';
     return '#fff';
@@ -161,6 +164,7 @@ const AnswerInput = styled(IonInput)`
 `;
 
 const AnswerButton = styled.div`
+  cursor: pointer;
   border-radius: 0 14px 14px 0;
   border-radius: 14px;
   height: 38px;
