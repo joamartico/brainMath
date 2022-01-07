@@ -86,7 +86,7 @@ const Main = () => {
         </Toolbar>
         <Text>{listen ? <ListenButton operation={operation} /> : operation}</Text>
 
-        <AnswerRow onSubmit={onCheck}>
+        <AnswerRow onSubmit={onCheck} answerState={answerState}>
           <AnswerInput
             autofocus
             onIonChange={e => setAnswerInput(e.detail.value)}
@@ -117,23 +117,10 @@ const Toolbar = styled.div`
   display: flex !important;
   align-items: center !important;
   height: 42px !important;
-  /* font-weight: 500;
-  font-family: Roboto, sans-serif;
-  font-size: 14px; */
-  /* position: fixed !important; */
   top: 0 !important;
   width: 90% !important;
   margin: auto;
   height: 70px !important;
-`;
-
-const AnswerRow = styled.form`
-  display: flex;
-  /* flex-direction: row; */
-  /* align-items: center; */
-  margin: auto;
-  width: 200px;
-  margin-top: 50px;
 `;
 
 const Text = styled.div`
@@ -146,29 +133,31 @@ const Text = styled.div`
   /* font-family: 'Montserrat', "Helvetica Neue", Helvetica, */
 `;
 
-const AnswerInput = styled(IonInput)`
-  border-radius: 14px 0 0 14px;
-  border-radius: 14px;
-  height: 46px;
-  padding: 10px;
-  width: 100px;
+const AnswerRow = styled.form`
+  display: flex;
+  margin: auto;
   width: 200px;
-  width: 150px;
-  padding-right: 50px !important;
-  background: white;
+  margin-top: 50px;
+  background: red;
+  border:  2.3px solid  ${({ answerState }) => answerState == 'incorrect' ?  COLORS.lightRed : "var(--background-color)"} !important;
   background: ${({ answerState }) => {
     if (answerState == 'correct') return '#2f2';
-    // if (answerState == 'incorrect') return '#f22';
     return '#fff';
   }} !important;
+  border-radius: 14px;
+  height: 46px;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+`;
 
-  /* margin-top: 60px; */
+const AnswerInput = styled(IonInput)`
+  border-radius: 14px;
+  height: 46px;
+  /* padding: 10px; */
+  --padding-end: 0px;
+  background: none;
   text-align: center;
-  margin: 0;
-  /* border-bottom: 4px solid transparent; */
-  border-bottom: 3px solid var(--background-color) !important;
-  border-top: 3px solid var(--background-color) !important;
-  position: absolute;
+  font-weight: 500;
 `;
 
 const AnswerButton = styled.div`
@@ -184,7 +173,6 @@ const AnswerButton = styled.div`
     if (answerState == 'incorrect') return COLORS.lightRed;
     return COLORS.primaryGreen;
   }} !important;
-  /* color: #182; */
   color: ${({ answerState }) => {
     if (answerState == 'incorrect') return COLORS.darkRed;
     return COLORS.secondaryGreen;
@@ -193,16 +181,12 @@ const AnswerButton = styled.div`
   font-weight: 500;
   border-bottom: 4px solid
     ${({ answerState }) => (answerState == 'incorrect' ? COLORS.darkRed : '#182')};
-  /* position: relative;
-  right: 0; */
   margin-left: auto;
   z-index: 9999;
   margin-right: 3px;
-  margin-top: 5px;
   &:active {
-    /* border-top: 4px solid #fff; */
     border-bottom: none;
-    margin-top: 7px;
+    /* margin-top: 7px; */
   }
   transition: all 0.2s ease-out;
 `;
